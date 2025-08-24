@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Love ❤️</title>
+  <style>
+    body { background: black; overflow: hidden; margin: 0; }
+    .fall { position: absolute; font-size: 30px; font-weight: bold; animation: fall linear forwards; }
+    @keyframes fall {
+      from { top: -50px; opacity: 1; }
+      to { top: 100vh; opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const messages = [
+      "Anh yêu em nhiều lắm 💖",
+      "Tớ thích cậu nhiều 🥰",
+      "I Love You 💕",
+      "Em là cả thế giới của anh 🌎"
+    ];
+    function createFalling() {
+      const msg = document.createElement("div");
+      msg.className = "fall";
+      msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+      msg.style.left = Math.random() * window.innerWidth + "px";
+      msg.style.color = ["pink","red","violet","white"][Math.floor(Math.random()*4)];
+      msg.style.animationDuration = (3 + Math.random()*3) + "s";
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 6000);
+    }
+    setInterval(createFalling, 500);
+  </script>
+</body>
+</html>
